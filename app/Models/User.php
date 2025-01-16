@@ -17,10 +17,16 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+    // app/Models/User.php
     protected $fillable = [
         'name',
         'email',
         'password',
+        'company',  // Make sure this exists
+        'role',
+        'status',
+        'chat_id',
+        'image'
     ];
 
     /**
@@ -44,5 +50,10 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function step()
+    {
+        return $this->hasMany(Step::class);
     }
 }

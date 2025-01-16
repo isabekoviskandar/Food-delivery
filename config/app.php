@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    Barryvdh\Debugbar\ServiceProvider::class,
     /*
     |--------------------------------------------------------------------------
     | Application Name
